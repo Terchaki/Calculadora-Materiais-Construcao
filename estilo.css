@@ -1,0 +1,104 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: linear-gradient(#2F4F4F, #8FBC8F, #2F4F4F);
+}
+
+#titulo {
+	text-align: center;
+	margin: auto;
+	color: red;
+	padding-top: 30px;
+	font-size: 26px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.principal {
+	border: 1px solid #000;
+	margin: auto;
+	margin-top: 40px;
+	width: 600px;
+	height: 100%;
+	background-color: #F0FFF0;
+	border-radius: 5px 15px;
+	box-shadow: 1px 1px 3px 1px #000;
+}
+
+.calculadora-materiais {
+	padding: 20px;
+	display: inline-block;
+}
+
+.calculadora-materiais h3 {
+	text-align: center;
+	border-bottom: 1px solid black;
+	text-transform: uppercase;
+	font-size: 16px;
+	padding: 10px;
+}
+
+.calculadora-materiais .observacao {
+	color: #FF0000;
+	margin: 10px;
+	font-size: 12px;
+}
+
+.calculadora-materiais p {
+	margin: 10px;
+	font-weight: bold;
+}
+
+.calculadora-materiais input {
+	margin-left: 10px;
+	width: 70px;
+}
+
+.botao {
+	cursor: pointer;
+
+}
+
+.botao:hover {
+	letter-spacing: 1.5px;
+	box-shadow: 1px 1px 3px 1px #000;
+}
+
+.estado {
+	color: #800000;
+}
+
+@media (max-width: 700px) {
+
+	.principal {
+		width: 450px;
+	
+}
+
+	.calculadora-materiais h3 {
+		font-size: 14px;
+	
+}
+
+}
+
+@media (max-width: 490px) {
+
+	.principal {
+		width: 300px;
+	
+}
+
+	.calculadora-materiais h3 {
+		font-size: 12px;
+	
+}
+
+	#titulo {
+		font-size: 20px;
+	}
+
+}
