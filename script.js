@@ -10,8 +10,15 @@ function resultadoTijolao() {
 
 	var total = Math.round((MedidaLinear * MedidaAltura) * 23)
 
-	document.getElementById("ResultadoTijolo").innerHTML = ("A quantidade necessária em M² de Tijolos Furados é: " + total)
-	document.getElementById("Conclusao").innerHTML = ("Significa que você vai precisar de "+ total + " tijolos para fazer sua construção.")
+		if (MedidaLinear == '' || MedidaAltura == '') {
+			
+			alert("Valor inválido, digite um valor numérico.")
+	
+		} else {
+
+			document.getElementById("ResultadoTijolo").innerHTML = ("A quantidade necessária em M² de Tijolos Furados é: " + total)
+			document.getElementById("Conclusao").innerHTML = ("Significa que você vai precisar de "+ total + " tijolos para fazer sua construção.")
+		}
 
 }
 
@@ -27,13 +34,17 @@ function resultadoCanaleta_Bloco() {
 
 	var total = Math.round((MedidaLinear * MedidaAltura) * 12.5)
 
-	//document.write(total)
 
+		if (MedidaLinear == '' || MedidaAltura == '') {
+			
+			alert("Valor inválido, digite um valor numérico.")
 	
+		} else {
 
-	document.getElementById("ResultadoCanaleta_Bloco").innerHTML = ("A quantidade necessária de Blocos ou Canaletas é : " + total)
-	document.getElementById("ConclusaoCanaleta_Bloco").innerHTML = ("Significa que você vai precisar de "+ total + " Blocos ou Canaletas para fazer sua construção.")
-
+			document.getElementById("ResultadoCanaleta_Bloco").innerHTML = ("A quantidade necessária de Blocos ou Canaletas é: " + total)
+			document.getElementById("ConclusaoCanaleta_Bloco").innerHTML = ("Significa que você vai precisar de "+ total + " Blocos ou Canaletas para fazer sua construção.")
+		}
+	
 }
 
 //Funcao Calculo de rendimento da Argamassa
@@ -45,9 +56,16 @@ function RendimentoArgamassa() {
 
 	var total = Math.round(MetQuad * 4.5 / 20)
 
+		if (MetQuad == '') {
+			
+			alert("Valor inválido, digite um valor numérico.")
+	
+		} else {
 
-	document.getElementById("ResultadoArgamassa").innerHTML = ("A quantidade necessária de pacotes de Argamasss é : " + total)
-	document.getElementById("ConclusaoArgamassa").innerHTML = ("Significa que você vai precisar de "+ total + " pacotes de Argamassa para assentar o piso.")
+			document.getElementById("ResultadoArgamassa").innerHTML = ("A quantidade necessária de pacotes de Argamassa é: " + total)
+			document.getElementById("ConclusaoArgamassa").innerHTML = ("Significa que você vai precisar de "+ total + " pacotes de Argamassa para assentar o piso.")
+		}
+
 
 }
 
@@ -67,8 +85,27 @@ function RendimentoBrita() {
 
 	var total = Math.round((MetLarg * MetComp) * ExpBrita / 100)
 
+		if (MetLarg == '' || MetComp == '' || ExpBrita == '') {
+			
+			alert("Valor inválido, digite um valor numérico.")
+	
+		} else if (total < 0.693) {
 
-	document.getElementById("ResultadoBrita").innerHTML = ("A quantidade necessária em metros cúbicos de Brita é : " + total)
-	document.getElementById("ConclusaoBrita").innerHTML = ("Significa que você vai precisar de "+ total + " metros cúbicos de brita para esparramar no chão.")
+			total = Math.LN2 //propriedade retorna aproximadamente 0,693 
+
+			document.getElementById("ResultadoBrita").innerHTML = ("A quantidade necessária em metros cúbicos de Brita é: " + total.toFixed(2))
+			document.getElementById("ConclusaoBrita").innerHTML = ("Significa que você vai precisar de "+ total.toFixed(2) + " metro cúbico de brita para esparramar no chão.")
+
+		} else if (total == 1) {
+
+			document.getElementById("ResultadoBrita").innerHTML = ("A quantidade necessária em metros cúbicos de Brita é: " + total)
+			document.getElementById("ConclusaoBrita").innerHTML = ("Significa que você vai precisar de "+ total + " metro cúbico de brita para esparramar no chão.")
+
+			}
+
+		else {
+			document.getElementById("ResultadoBrita").innerHTML = ("A quantidade necessária em metros cúbicos de Brita é: " + total)
+			document.getElementById("ConclusaoBrita").innerHTML = ("Significa que você vai precisar de "+ total + " metros cúbicos de brita para esparramar no chão.")
+		}
 
 }

@@ -28,6 +28,10 @@ body {
 	box-shadow: 1px 1px 3px 1px #000;
 }
 
+.principal .validacao {
+	color: #FF0000;
+}
+
 .calculadora-materiais {
 	padding: 20px;
 	display: inline-block;
@@ -42,7 +46,7 @@ body {
 }
 
 .calculadora-materiais .observacao {
-	color: #FF0000;
+	color: #FF4500;
 	margin: 10px;
 	font-size: 12px;
 }
@@ -93,7 +97,7 @@ body {
 }
 
 	.calculadora-materiais h3 {
-		font-size: 12px;
+		font-size: 15px;
 	
 }
 
